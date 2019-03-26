@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background: #BDE0DA;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.wrapper .tt_container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper .tt_container .tt_item{
+  margin: 15px;
+  background: #292929;
+  color: #BDE0DA;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.wrapper .tt_container .tt_item p{
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wrapper .tt_container .tooltip {
+  position: absolute;
+  color: #292929;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border: 3px solid  #292929;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  line-height: 40px;
+  display: none;
+}
+
+.wrapper .tt_container .tooltip.tooltip_top{
+  top: -125%;
+  left: 0;
+}
+
+.wrapper .tt_container .tooltip.tooltip_bottom{
+  bottom: -125%;
+  left: 0;
+}
+
+.wrapper .tt_container .tooltip.tooltip_top:before{
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 16px solid;
+  border-color: #292929 transparent transparent transparent;
+}
+
+.wrapper .tt_container .tooltip.tooltip_top:after{
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 14px solid;
+  border-color: #BDE0DA transparent transparent transparent;
+}
+
+.wrapper .tt_container .tooltip.tooltip_bottom:before{
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 16px solid;
+  border-color: transparent transparent #292929 transparent;
+}
+
+.wrapper .tt_container .tooltip.tooltip_bottom:after{
+  content: "";
+  position: absolute;
+  top: -27px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 14px solid;
+  border-color: transparent transparent #BDE0DA transparent;
+}
+
+.wrapper .tt_container .tt_item:hover .tooltip{
+  display: block;
+  transition: all 0.5s ease;
+}
